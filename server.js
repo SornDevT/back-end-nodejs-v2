@@ -13,6 +13,8 @@ app.use(bodyParser.json())
 
 app.use(require('./src/routes/routes'))
 
+// ສ້າງ path ສະແດງຮູບພາບ
+app.use('/assets/image',express.static('uploads'))
 
 app.listen(3000, () => {
     console.log("Server Running Port:3000 on localhost")
