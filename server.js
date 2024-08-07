@@ -1,6 +1,18 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const cors = require('cors')
+
+
+// config cors ------------
+const coreOptions = {
+    origin: ['http://localhost:3000'],
+    optionsSuccessStatus: 200
+}
+
+// ເປີດໃຊ້ Cors ------
+app.use(cors(coreOptions))
+// ---------------
 
 
 // ນຳໃຊ້ body-parser ເພື່ອດຶງຂໍ້ມູນຈາກ Form
