@@ -10,7 +10,7 @@ router.get('/',ProductController.GetAllProduct)
 router.get('/:id',ProductController.GetProductById)
 
 // get query string 
-router.get('/search',ProductController.SearchProduct)
+router.get('/search/p',ProductController.SearchProduct)
 
 // post add product 
 router.post('/',ProductController.AddNewProduct)
