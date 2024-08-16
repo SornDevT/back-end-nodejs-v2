@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const UserContoller = require('../controllers/user.controller')
+const auth = require('../middleware/auth.middleware')
 
 /// get all user
 router.get('/',UserContoller.GetAllUser)

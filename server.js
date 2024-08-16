@@ -14,6 +14,8 @@ const coreOptions = {
 app.use(cors(coreOptions))
 // ---------------
 
+// ນຳໃຊ້ໂຕແປ ແບບ Global
+require('./src/global/blacklist.global')
 
 // ນຳໃຊ້ body-parser ເພື່ອດຶງຂໍ້ມູນຈາກ Form
 app.use(bodyParser.urlencoded({extended: false}))
@@ -27,6 +29,8 @@ app.use(require('./src/routes/routes'))
 
 // ສ້າງ path ສະແດງຮູບພາບ
 app.use('/assets/image',express.static('uploads'))
+
+
 
 app.listen(3000, () => {
     console.log("Server Running Port:3000 on localhost")

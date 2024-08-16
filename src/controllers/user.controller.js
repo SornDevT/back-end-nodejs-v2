@@ -2,6 +2,25 @@
 
 const UserModel = require('../models/user.model')
 
+
+
+// login 
+
+exports.login = (req, res) => {
+    UserModel.login(req.body, (err, token) => {
+        if(err) return res.status(500).json({success: false, message: err.message})
+        res.json({success: true, token:token})  
+    })
+}
+
+// logout 
+exports.logout = (req,res) => {
+    UserModel.logout(req, (err, result) =>{
+        if(err) return res.status(500).json({success: false, message: err.message})
+            res.json({success: true, message: 'ອອກຈາກລະບົບສຳເລັດ!'}) 
+    })
+}
+
 exports.GetAllUser = (req,res)=>{
     UserModel.findAll((err, result) => {
         if(err) return res.status(500).json({success: false, message: err.message})
